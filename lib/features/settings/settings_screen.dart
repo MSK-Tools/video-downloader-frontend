@@ -47,7 +47,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
 
     // Use native folder picker so user can pick any directory on device
-    final String? selected = await FilePicker.platform.getDirectoryPath(dialogTitle: 'Choose Download Directory');
+    final String? selected = await FilePicker.getDirectoryPath(dialogTitle: 'Choose Download Directory');
     if (selected != null && selected.isNotEmpty) {
       await HiveDb.setDownloadDirectory(selected);
       setState(() {
